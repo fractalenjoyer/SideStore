@@ -1,9 +1,11 @@
 name: Beta SideStore build
 on:
-  push:
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+' # example: 1.0.0-beta.1
-
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
 jobs:
   build:
     name: Build and upload SideStore Beta
